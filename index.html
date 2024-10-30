@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8"> 
+  <title>Elevator</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- Setup Page -->
+  <div id="setup-page">
+    <h1>Elevator Game Setup</h1>
+    <p>Enter a prompt for each floor:</p>
+    <form id="prompts-form">
+      <label> </label> <input type="text" id="prompt-0" placeholder="List a task"><br><br>
+      <label> </label> <input type="text" id="prompt-1" placeholder="List a task"><br><br>
+      <label> </label> <input type="text" id="prompt-2" placeholder="List a task"><br><br>
+      <label> </label> <input type="text" id="prompt-3" placeholder="List a task"><br><br>
+      <label> </label> <input type="text" id="prompt-4" placeholder="List a task"><br><br>
+      <label> </label> <input type="text" id="prompt-5" placeholder="List a task"><br><br>
+      <label> </label> <input type="text" id="prompt-6" placeholder="List a task"><br><br>
+      <label> </label> <input type="text" id="prompt-7" placeholder="List a task"><br><br>
+      <label> </label> <input type="text" id="prompt-8" placeholder="List a task"><br><br>
+      <label> </label> <input type="text" id="prompt-9" placeholder="List a task"><br><br>
+
+      <button type="button" id="play-game" onclick="window.location.href='game.html'">Play the Game</button>
+    </form>
+  </div>
+
+  <!-- Game Page -->
+  <div id="game-page" style="display:none;">
+    <h1>Elevator Game</h1>
+    <div class="handle">
+      <div class="display">Select a floor</div>
+      <div class="buttons">
+        <button class="btn-floor" data-set-floor="0">T</button>
+        <button class="btn-floor" data-set-floor="1">1</button>
+        <button class="btn-floor" data-set-floor="2">2</button>
+        <button class="btn-floor" data-set-floor="3">3</button>
+        <button class="btn-floor" data-set-floor="4">4</button>
+        <button class="btn-floor" data-set-floor="5">5</button>
+        <button class="btn-floor" data-set-floor="6">6</button>
+        <button class="btn-floor" data-set-floor="7">7</button>
+        <button class="btn-floor" data-set-floor="8">8</button>
+        <button class="btn-floor" data-set-floor="9">9</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
