@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css?family=Space+Mono");
+body {
+  font-family: 'Nunito', sans-serif;
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove any default margin */
+  background-color: #f0f0f0; /* Optional: Set a background color */
+}
+
+input[type="text"] {
+  border-radius: 8px; /* Adjust this value for more or less rounding */
+  padding: 8px;
+  border: 1px solid #ccc; /* Optional: customize the border */
+  font-family: 'Nunito', sans-serif;
+}
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+/* Container styles */
+#setup-page {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligns all content to the left */
+  max-width: 300px; /* Sets a max width for the form */
+  padding: 20px;
+}
+
+/* Prompt container styling */
+#prompt-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%; /* Ensure container takes full width */
+}
+
+/* Each prompt box with label and input aligned horizontally */
+.prompt-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Label styling to align it next to the input box */
+.prompt-box label {
+  width: 60px; /* Fixed width for consistent label alignment */
+  text-align: left;
+}
+
+/* Button styling */
+button {
+  margin-top: 20px; /* Space above the button */
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.handle {
+  position: absolute;
+  width: 250px;
+  border-radius: 15px;
+  left: 15px;
+  top: 15px;
+  bottom: 15px;
+  padding: 15px;
+  background: radial-gradient(center, circle, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 21%), radial-gradient(center, circle, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 21%), radial-gradient(center, circle farthest-corner, grey, #a6a6a6);
+  background-size: 10px 10px, 10px 10px, 100% 100%;
+  background-position: 1px 1px, 0px 0px, center center;
+}
+
+.display {
+  background: rgb(212, 155, 128);
+  background-image: repeating-linear-gradient(0deg, #e9e797 0px, #e9e797 2px, transparent 2px, transparent 10px), repeating-linear-gradient(90deg, #e9e797, #e9e797 2px, transparent 2px, transparent 9px);
+  border: 11px solid #333;
+  border-radius: 8px;
+  width: 100%;
+  padding: 7px 17px;
+  font-family: Space Mono, monospace;
+  height: 80px;
+  overflow-y: hidden;
+  color: #000;
+  line-height: 1.45;
+  box-shadow: inset 0px 0px 0px 2px black, 0px 0px 0px 2px black;
+  margin-bottom: 10px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distribute buttons evenly */
+  align-items: center;
+  gap: 20px; /* Adds space between rows */
+}
+
+.btn-container {
+  flex-basis: 45%; /* Each row will have two buttons */
+  display: flex;
+  justify-content: center; /* Centers the buttons in the row */
+}
+
+button.btn-floor {
+  margin: 22px; /* Adds more space between buttons */
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid lightgray;
+  box-shadow: inset 0px 0px 2px 1px gray, inset 0px -3px 4px rgba(0, 0, 0, 0.3),
+              inset 0px 3px 4px rgba(255, 255, 255, 0.6), 0px -2px 3px rgba(0, 0, 0, 0.6),
+              0px 1px 2px rgba(255, 255, 255, 0.7), 0px 0px 1px 1px black, 
+              0px 0px 0px 5px gray, 0px 0px 1px 6px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 23px;
+  color: #3c3c3c;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+button.btn-floor:hover {
+  border-color: rgb(212, 155, 128);
+}
+button.btn-floor:active, button.btn-floor.active {
+  background: rgb(212, 155, 128);
+  color: #ccffcc;
+  border-color: green;
+}
+
+.building {
+  width: 300px;
+  position: absolute;
+  background: #ccc26b;
+  background-image: linear-gradient(rgba(204, 194, 107, 0.6), rgba(204, 194, 107, 0.6)), url("http://gdj.graphicdesignjunction.com/wp-content/uploads/2011/05/photoshop-texture-35.jpg");
+  background-size: cover, cover;
+  height: 660px;
+  left: 300px;
+  top: 50px;
+}
+.building:before {
+  position: absolute;
+  display: block;
+  content: "";
+  background: inherit;
+  top: -30px;
+  left: 85px;
+  width: 130px;
+  height: 30px;
+}
+.building:after {
+  position: absolute;
+  display: block;
+  content: "";
+  background: #333;
+  bottom: -20px;
+  left: -15px;
+  width: 330px;
+  height: 20px;
+}
+
+.floors {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: stretch;
+  flex-direction: column-reverse;
+}
+.floors .floor {
+  position: relative;
+  height: 100%;
+}
+.floors .floor:after {
+  content: "";
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  border-top: 10px solid rgb(176, 198, 147);
+  opacity: 0.8;
+}
+.floors .floor .floor-door {
+  background: silver;
+  background-image: repeating-linear-gradient(90deg, transparent 0px, transparent 33px, #333 33px, #333 37px, transparent 37px, transparent 70px);
+  width: 80px;
+  height: 55px;
+  border: 5px solid #333;
+  border-bottom: none;
+  position: absolute;
+  bottom: 0;
+  left: 5px;
+}
+.floors .floor .floor-window {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+}
+.floors .floor .floor-window:after, .floors .floor .floor-window:before {
+  content: "";
+  position: absolute;
+  display: block;
+  background: goldenrod;
+  border: 2px solid darkgoldenrod;
+  width: 40px;
+  height: 40px;
+  top: 20px;
+  margin-left: -20px;
+}
+.floors .floor .floor-window:after {
+  left: 80%;
+}
+.floors .floor .floor-window:before {
+  left: 20%;
+}
+
+.elevator-container {
+  position: absolute;
+  background: rgb(176, 198, 147);
+  width: 100px;
+  left: 100px;
+  height: 100%;
+  z-index: 10;
+}
+.elevator-container .elevator {
+  width: 40px;
+  height: 60px;
+  margin-left: -20px;
+  margin-top: 7px;
+  left: 50%;
+  background: white;
+  border: 3px solid #333;
+  border-top-width: 10px;
+  position: absolute;
+}
+.elevator-container .elevator-door {
+  width: 100%;
+  height: 100%;
+  right: 0;
+  position: relative;
+  background: silver;
+  background: radial-gradient(center, circle, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 21%), radial-gradient(center, circle, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 21%), radial-gradient(center, circle farthest-corner, grey, #8a8a8a);
+  background-size: 7px 7px, 7px 7px, 100% 100%;
+  background-position: 1px 1px, 0px 0px, center center;
+}
+.elevator-container .elevator-light {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  border-radius: 50%;
+  border: 1px solid black;
+  width: 8px;
+  height: 8px;
+  margin-left: -4px;
+  background: rgb(212, 155, 128);
+}

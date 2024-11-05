@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8"> 
+  <title>Elevator</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- Setup Page -->
+  <div id="setup-page">
+    <h1>Elevator Game</h1>
+    <p>Enter a task you should complete:</p>
+    <form id="prompts-form" onsubmit="return validateInputs()">
+      <div class="prompt-box">
+          <label>Floor 9: </label>
+          <input type="text" id="prompt-9" placeholder="List a task" required>
+      </div>
+      <div class="prompt-box">
+          <label>Floor 8: </label>
+          <input type="text" id="prompt-8" placeholder="List a task" required>
+      </div>
+      <div class="prompt-box">
+          <label>Floor 7: </label>
+          <input type="text" id="prompt-7" placeholder="List a task" required>
+      </div>
+      <div class="prompt-box">
+          <label>Floor 6: </label>
+          <input type="text" id="prompt-6" placeholder="List a task" required>
+      </div>
+      <div class="prompt-box">
+          <label>Floor 5: </label>
+          <input type="text" id="prompt-5" placeholder="List a task" required>
+      </div>
+      <div class="prompt-box">
+          <label>Floor 4: </label>
+          <input type="text" id="prompt-4" placeholder="List a task" required>
+      </div>
+      <div class="prompt-box">
+          <label>Floor 3: </label>
+          <input type="text" id="prompt-3" placeholder="List a task" required>
+      </div>
+      <div class="prompt-box">
+          <label>Floor 2: </label>
+          <input type="text" id="prompt-2" placeholder="List a task" required>
+      </div>
+      <div class="prompt-box">
+          <label>Floor 1: </label>
+          <input type="text" id="prompt-1" placeholder="List a task" required>
+      </div>
+      <div class="prompt-box">
+          <label>Floor T: </label>
+          <input type="text" id="prompt-0" placeholder="List a task" required>
+      </div>
+      <button type="button" id="play-game" onclick="window.location.href='game.html'">Play the Game</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
